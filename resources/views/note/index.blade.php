@@ -1,13 +1,14 @@
-<x-layout>
-    <div class="note-container">
+<x-app-layout>
+    <div class="note-container py-12 ">
         <a href="{{ route('note.create') }}" class="new-note-btn">
             New Note
         </a>
         <div class="notes">
             @foreach ($notes as $note)
-            <div class="note">
+            <div class="noteindex">
+                <h1 class="text-md text-end py-1 px-3">{{ $note->created_at }}</h1>
                 <div class="note-body">
-                  {{ Str::words($note-> note, 30) }}
+                  {{ Str::words($note-> note, 7) }}
                 </div>
                 <div class="note-buttons">
                     <a href="{{ route('note.show', $note) }}" class="note-edit-button">View</a>
@@ -23,6 +24,8 @@
             
         </div>
 
-        {{ $notes->links() }}
+         <div class="p-6">
+           {{ $notes->links() }}
+        </div> 
     </div>
- </x-layout>
+ </x-app-layout>

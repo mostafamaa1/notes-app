@@ -2,6 +2,8 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <h1 class="text-center text-2xl mb-4 font-bold hover:text-gray-700 text-rose-700">Notes App</h1>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -44,4 +46,11 @@
             </x-primary-button>
         </div>
     </form>
+    
+    <div class="flex justify-start items-center mt-4 ms-2">
+        <p class="text-base text-gray-900">New here?</p>
+        <a class="mx-2 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+            {{ __('Sign up') }}
+        </a>
+    </div>
 </x-guest-layout>

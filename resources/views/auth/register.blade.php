@@ -1,4 +1,7 @@
 <x-guest-layout>
+
+    <h1 class="text-center text-2xl mb-4 font-bold hover:text-gray-700 text-rose-700">Notes App</h1>
+    
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
